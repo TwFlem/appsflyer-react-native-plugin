@@ -677,7 +677,7 @@ public class RNAppsFlyerModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void sendPushNotificationData(ReadableMap pushPayload) {
+    public void sendPushNotificationData(ReadableMap pushPayload, Boolean preformDeepLink) {
         JSONObject payload = RNUtil.readableMapToJson(pushPayload);
         if (payload == null) {
             Log.d("AppsFlyer", "PushNotification payload is null");
@@ -697,6 +697,10 @@ public class RNAppsFlyerModule extends ReactContextBaseJavaModule {
         activity.setIntent(intent);
 
         AppsFlyerLib.getInstance().sendPushNotificationData(activity);
+
+        if (preformDeepLink) {
+            AppsFlyerLib.getInstance().performOnDeepLinking(activity.getIntent(), activity.getApplicationContext());
+        }
     }
 
     @ReactMethod
