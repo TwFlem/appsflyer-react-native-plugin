@@ -797,7 +797,7 @@ if (Platform.OS == 'android') {
 appsFlyer.validateAndLogInAppPurchase(info, res => console.log(res), err => console.log(err));
 ```
 
-##### <a id="sendPushNotificationData"> **`sendPushNotificationData(pushPayload): void`**
+##### <a id="sendPushNotificationData"> **`sendPushNotificationData(pushPayload, preformDeepLink): void`**
 Push-notification campaigns are used to create fast re-engagements with existing users.
 AppsFlyer supplies an open-for-all solution, that enables measuring the success of push-notification campaigns, for both iOS and Android platforms.<br>
 Learn more - https://support.appsflyer.com/hc/en-us/articles/207364076-Measuring-Push-Notification-Re-Engagement-Campaigns
@@ -822,7 +822,7 @@ const pushPayload = {
                 sound:"default"
             }
         };
-        appsFlyer.sendPushNotificationData(pushPayload);
+        appsFlyer.sendPushNotificationData(pushPayload, false);
 ```
 ---
 

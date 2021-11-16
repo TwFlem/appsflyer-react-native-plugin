@@ -558,9 +558,10 @@ appsFlyer.setUseReceiptValidationSandbox = (isSandbox) => {
  *AppsFlyer supplies an open-for-all solution, that enables measuring the success of push-notification campaigns, for both iOS and Android platforms.
  * Learn more - https://support.appsflyer.com/hc/en-us/articles/207364076-Measuring-Push-Notification-Re-Engagement-Campaigns
  * @param pushPayload
+ * @param preformDeepLink
  */
-appsFlyer.sendPushNotificationData = (pushPayload) => {
-    return RNAppsFlyer.sendPushNotificationData(pushPayload);
+appsFlyer.sendPushNotificationData = (pushPayload, preformDeepLink) => {
+    return RNAppsFlyer.sendPushNotificationData(pushPayload, preformDeepLink);
 }
 
 /**
